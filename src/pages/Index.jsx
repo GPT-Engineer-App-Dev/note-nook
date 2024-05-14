@@ -1,6 +1,12 @@
 import { useState } from "react";
-import { Container, VStack, HStack, Input, Button, Text, Checkbox, IconButton } from "@chakra-ui/react";
+import { Container, VStack, HStack, Input, Button, Text, Checkbox, IconButton, Box } from "@chakra-ui/react";
 import { FaTrash } from "react-icons/fa";
+
+const Footer = () => (
+  <Box as="footer" py={4} textAlign="center" bg="gray.200" w="100%">
+    <Text>&copy; {new Date().getFullYear()} Your Company. All rights reserved.</Text>
+  </Box>
+);
 
 const Index = () => {
   const [tasks, setTasks] = useState([]);
@@ -52,6 +58,7 @@ const Index = () => {
           ))}
         </VStack>
       </VStack>
+      <Footer />
     </Container>
   );
 };
